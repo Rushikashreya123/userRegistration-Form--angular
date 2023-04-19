@@ -1,0 +1,117 @@
+<div id="outerContainer">
+    <h1>User Registration</h1>
+    <!-- formGroup for all inputs a submit it by clicking submit button -->
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <!-- element that holds the input field and the error messages for firstname -->
+      <div id="commonclass">
+        <label for="first-name">First Name: </label>
+        <input type="text" formControlName="firstName" placeholder="Enter your First Name..">
+      </div>
+      <div *ngIf="firstname && firstname?.touched && firstname.errors?.['required']">
+       <span>*fill the field</span>  <!-- every span is to display error in red color -->
+      </div>
+      <div *ngIf=" firstname && firstname?.errors?.['pattern']">
+          <span>*First letter should be capital</span>
+      </div>
+      <div *ngIf="firstname && firstname?.errors?.['minlength'] ">
+        <span>* You must enter min 3 chars</span>
+      </div>
+      <div *ngIf="firstname && firstname?.errors?.['maxlength'] ">
+      <span>*you can enter max 256 chars</span>
+      </div>
+      <!-- element that holds the input field and the error messages for last name -->
+      <div id="commonclass">
+        <label for="last-name">Last Name: </label>
+        <input  type="text" formControlName="lastName" placeholder="Enter your Last Name.." >
+      </div>
+      <div *ngIf="lastname && lastname?.touched && lastname.errors?.['required']">
+        <span>fill the field</span>
+      </div>
+      <div *ngIf=" lastname && lastname?.errors?.['pattern']">
+          <span>First letter should be capital</span>
+      </div>
+      <div *ngIf="lastname && lastname?.errors?.['minlength'] ">
+        <span>error must enter min 3 chars</span>
+      </div>
+      <div *ngIf="lastname && lastname?.errors?.['maxlength'] ">
+        <span>*error can enter max 256 chars</span>
+      </div>
+      <!--element that holds the input field and the error messages for age-->
+      <div id="commonclass">
+        <label for="Age">Age: </label>
+        <input type="number" formControlName="Age" placeholder="Enter your Age.." >
+      </div>
+      <div *ngIf="Age && Age?.touched && Age.errors?.['required']">
+        <span>*fill the field</span>
+      </div>
+      <div *ngIf="Age && Age.errors?.['min']">
+        <span>error age must be between 1 to 999</span>
+      </div>
+      <div *ngIf="Age && Age.errors?.['max']">
+        <span>error age must be between 1 to 999</span>
+      </div>
+  
+      <!--element that holds the input field and the error messages for email address -->
+      <div id="commonclass">
+        <label for="Email">Email Address: </label>
+        <input type="email" formControlName="Email" placeholder="Enter your Email Address..">
+      </div>
+      <div *ngIf="email && email?.touched && email.errors?.['required']">
+        <span>*fill the field</span>
+      </div>
+      <div *ngIf="email && email?.errors?.['pattern'] ">
+        <span>error Enter valid email</span>
+      </div>
+      
+  <!--element that holds the input field and the error messages for phone number-->
+      <div id="commonclass">
+        <label for="phone">Phone No: </label>
+        <input type="number" formControlName="PhoneNo" placeholder="Enter your Phone No..">
+      </div>
+      <div *ngIf="PhoneNo && PhoneNo.touched && PhoneNo.errors?.['required']">
+        <span>*fill the field</span>
+      </div>
+      <div *ngIf=" PhoneNo && PhoneNo?.errors?.['pattern'] ">
+        <span>error Enter valid PhoneNo</span>
+      </div>
+  <!--element that holds the input field and the error messages for username -->
+      <div id="commonclass">
+        <label for="username">User Name: </label>
+        <input type="text" formControlName="UserName" placeholder="Enter your UserName..">
+      </div>
+      <div *ngIf="UserName && UserName.touched && UserName.errors?.['required']">
+        <span>*fill the field</span>
+      </div>
+      <div *ngIf=" UserName &&UserName?.errors?.['pattern'] ">
+        <span>error Enter valid UserName</span>
+      </div>
+  <!--element that holds the input field and the error messages for additional data-->
+      <div id="commonclass">
+        <label for="Additional Data">Additional Data Label: </label>
+        <input type="text" formControlName="AdditinalDataLabel" placeholder="Enter your Data Label.." [(ngModel)]="AddDataLabel">
+      </div>
+      <div *ngIf="AdditinalDataLabel && AdditinalDataLabel.touched && AdditinalDataLabel.errors?.['required']">
+        <span>*fill the field</span>
+      </div>
+      
+      <!-- div for common component -->
+      <div *ngFor="let i of indexArr" class="component">  
+        <!-- child component -->
+        <app-common-comp-form (sendInput)="getInput($event)" [isParentValid]="registrationForm.valid"></app-common-comp-form>
+        <br>
+        <!-- to display the data coming from Additional Data fields  -->
+        <div id ="AdditinalData" >
+            <div>Add Label:{{AddLabel[i]}}</div> 
+            <div>Add data:{{addValue[i]}}</div> 
+        </div>
+      </div>
+      <!-- button tag to add component -->
+      <button type="button" id="add" (click)="updateIndex()"[disabled]="registrationForm.invalid" >+</button><br>
+      <div id="buttons">
+          <button type="reset">Reset</button>
+          <button type="submit" [disabled]="registrationForm.invalid">Submit</button>
+      </div>
+    </form>
+    <!-- form ends -->
+  </div>
+  

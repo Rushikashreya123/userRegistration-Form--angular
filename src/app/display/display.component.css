@@ -1,0 +1,48 @@
+.displayOuter{
+    border: 1px solid black;
+    height: 60vh;
+    width: 50vw;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+    font-family: 'Libre Baskerville', serif;
+}
+.Heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+h1{
+    color: green;
+}
+.content{
+    display: flex;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+.Indetails{
+    display: flex;
+}
+#userdetails{
+ line-height: 3em;
+}
+@import url('https://fonts.googleapis.com/css2?family=Cantarell&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital@1&family=Oxygen&display=swap');
+ag-grid-angular{
+    width: 100vw; 
+    height: 700px;
+    padding: 5px;
+}
+.ag-grid{
+    display: flex;
+    justify-content: center;
+    
+}
+

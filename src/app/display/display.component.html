@@ -1,0 +1,54 @@
+<!-- to display user details in other page -->
+<div class="displayOuter">
+    <!-- to display heading -->
+    <div class="Heading">
+        <h1>Submitted sucessfully!</h1>
+        <h2> User Details</h2> 
+    </div>
+    <!-- user details content -->
+    <div class="content">
+        <section>
+            <div class="Indetails">
+                <p>First Name: </p>
+                <p>{{selectedUser.firstName}}</p>
+            </div>
+            <div class="Indetails">
+                <p>Last Name:</p>
+                <p>{{selectedUser.lastName}}</p>
+            </div>
+            <div class="Indetails">
+                <p>Age: </p>
+                <p>{{selectedUser.Age}}</p>
+            </div>
+            <div class="Indetails">
+                <p>Email:  </p>
+                <p>{{selectedUser.Email}}</p>
+            </div>
+            <div class="Indetails">
+                <p>Phone no: </p>
+                <p>{{selectedUser.PhoneNo}}</p>
+            </div>
+            <div class="Indetails">
+                <p>User Name: </p>
+                <p>{{selectedUser.UserName}}</p>
+            </div>
+        </section>
+        <section>
+            <div id="userdetails">
+                <!-- to display additional data component -->
+                <div><b><u>Additional data:</u></b></div>
+                
+                <div *ngFor="let info of   AdditionalValue; index as i" >
+                    <!-- additional data displaying -->
+                    <div>Label: {{AddLabel[i]}}</div>
+                    <div>Value: {{AdditionalValue[i]}}</div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+</div>
+<!-- to display all the users using ag grid -->
+<div class="ag-grid">
+<ag-grid-angular class="ag-theme-alpine" [rowData]="data" [columnDefs]="columHeadings" ></ag-grid-angular>
+    </div>

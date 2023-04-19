@@ -1,0 +1,21 @@
+/* style for a div that contains dropdown and input field */
+#commonComponentDiv{
+    border: 1px solid black;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;   
+       margin-left: 30px;
+      margin-right: 30px;
+  }
+
+ /* style using tagname */
+  label{
+      margin-left: 30px;
+  }
+  
+  /* to get red color for error messages */
+  #Error{
+    color: red;
+  }
+  

@@ -1,0 +1,71 @@
+/* styles for the form */
+#outerContainer{
+    border:1px solid black;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 45vw;
+   
+    
+    font-size: 15px;
+
+    font-family: 'Libre Baskerville', serif;
+}
+
+/* importing fonts from google */
+@import url('https://fonts.googleapis.com/css2?family=Cantarell&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital@1&family=Oxygen&display=swap');
+
+/* this is the style to place input field and label in a specific order */
+#commonclass{
+    padding: 7px 30px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;   
+}
+
+/* style for buttons div */
+#buttons{
+
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 30px;
+}
+#AdditinalData{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 30px;
+    margin-right: 90px;
+}
+#add{
+    margin-left: 40px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    
+}
+
+/* styling with tag names */
+input{
+    width: 300px;
+}
+form{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+button{
+    padding: 7px;
+    cursor: pointer;
+    
+}
+span{
+    color: red;
+}
+h1{
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 550;
+    margin-left: 35%;
+    margin-right: 30%;
+    margin-bottom: 30px;
+    }
